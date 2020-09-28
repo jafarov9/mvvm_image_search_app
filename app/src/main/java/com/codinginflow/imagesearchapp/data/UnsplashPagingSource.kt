@@ -1,5 +1,6 @@
 package com.codinginflow.imagesearchapp.data
 
+import android.util.Log
 import androidx.paging.PagingSource
 import com.codinginflow.imagesearchapp.api.UnsplashApi
 import com.codinginflow.imagesearchapp.model.UnsplashPhoto
@@ -19,7 +20,10 @@ class UnsplashPagingSource(
 
         return try {
             val response = unsplashApi.searchPhotos(query, position, params.loadSize)
-            val photos = response.resutls
+
+            Log.e("ccxcxc", "Size: $response")
+
+            val photos = response.results
 
             LoadResult.Page(
                 data = photos,
@@ -28,8 +32,10 @@ class UnsplashPagingSource(
             )
 
         } catch (exception: IOException) {
+            Log.e("ccxcxc", "Error: " + exception.localizedMessage)
             LoadResult.Error(exception)
         } catch (exception: HttpException) {
+            Log.e("ccxcxc", "HttpError: " + exception.localizedMessage)
             LoadResult.Error(exception)
         }
 

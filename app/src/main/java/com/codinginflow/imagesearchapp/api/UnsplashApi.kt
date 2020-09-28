@@ -10,7 +10,7 @@ interface UnsplashApi {
 
     companion object {
         const val BASE_URL = "https://api.unsplash.com/"
-        const val CLIENT_ID = BuildConfig.UNSPLASH_ACCESS_KEY
+        const val CLIENT_ID = "BVh57QiDOR1ylqQWZu7_Tf9nopnvSqpJ9OnnBr75Hy0" //API KEY
     }
 
 
