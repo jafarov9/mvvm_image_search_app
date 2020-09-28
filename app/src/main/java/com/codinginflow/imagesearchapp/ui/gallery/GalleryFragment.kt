@@ -15,8 +15,9 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         viewModel.photos.observe(viewLifecycleOwner) {
-            
+
         }
     }
 
